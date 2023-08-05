@@ -1,6 +1,6 @@
 import cls from 'cls-hooked';
 import { Sequelize } from 'sequelize';
-// import { registerModels } from '../models';
+import {registerModels} from "../models";
 
 export default class Database {
     constructor(environment, dbConfig) {
