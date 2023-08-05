@@ -1,0 +1,5 @@
+Create a migration file:
+npx sequelize migration:generate --name create_user_table
+
+Executes the updated migration file:
+npx sequelize db:migrate --env test
