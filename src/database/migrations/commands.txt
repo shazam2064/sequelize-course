@@ -3,3 +3,9 @@ npx sequelize migration:generate --name create_user_table
 
 Executes the updated migration file:
 npx sequelize db:migrate --env test
+
+Create a migration file:
+npx sequelize migration:generate --name create_roles_table
+
+Executes the updated migration roles table file:
+npx sequelize db:migrate --env test
