@@ -22,7 +22,7 @@ export default (sequelize) => {
                                        lastName,
                                        refreshToken,
                                    }) {
-            return sequelize.transaction(() => {
+            return sequelize.transaction(async () => {
                 let rolesToSave = [];
 
                 if (roles && Array.isArray(roles)) {

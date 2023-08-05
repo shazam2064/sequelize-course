@@ -1,0 +1,5 @@
+Check databases:
+docker-compose up -d
+
+Run tests:
+npm run test:watch
