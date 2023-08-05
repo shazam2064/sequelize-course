@@ -18,3 +18,9 @@ npm run dev
 
 Create a migration file:
 npx sequelize migration:generate --name create_refresh_token_table
+
+check sequelize status:
+npx sequelize db:migrate:status
+
+migrates all
+npx sequelize db:migrate
