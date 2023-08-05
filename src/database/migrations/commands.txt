@@ -9,3 +9,9 @@ npx sequelize migration:generate --name create_roles_table
 
 Executes the updated migration roles table file:
 npx sequelize db:migrate --env test
+
+Revert migration:
+npx sequelize db:migrate:undo --name 20230805212109-create_roles_table --env test
+
+Sync command:
+npm run dev
