@@ -5,7 +5,7 @@ export default function requiresAuth(tokenType = 'accessToken') {
      const authHeader = req.headers.authorization;
      if (authHeader) {
          try {
-             var [bearer, token] = authHeader.split('');
+             var [bearer, token] = authHeader.split(' ');
              if (bearer.toLowerCase() !== 'bearer' || !token) {
                 throw Error;
              }
