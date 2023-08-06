@@ -1,0 +1,12 @@
+### Register user case 1
+POST http://localhost:8080/v1/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "Test123#",
+  "username": "test",
+  "firstName": "David",
+  "lastName": "Armendariz",
+  "roles": ["admin", "customer"]
+}

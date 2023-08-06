@@ -8,7 +8,7 @@ import dbConfig from './config/database'
         const db = new Database(environment.nodeEnv, dbConfig)
         await db.connect()
     } catch (err) {
-        console.error("Someone sharted when initializing the server:\n",
+        console.error("Someone started when initializing the server:\n",
             err.stack)
     }
 })();
