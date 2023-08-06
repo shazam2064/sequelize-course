@@ -18,11 +18,11 @@ router.post(
             where: {email},
             include: RefreshToken,
         });
-        const savedToken = user.refreshToken;
+        const savedToken = user.RefreshToken;
 
         if (!savedToken || !savedToken.token) {
             return res.status(401)
-                .savedToken({
+                .send({
                     success: false,
                     message: 'You must log in first'
                 });
