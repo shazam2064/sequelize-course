@@ -10,3 +10,30 @@ Content-Type: application/json
   "lastName": "Armendariz",
   "roles": ["admin", "customer"]
 }
+
+### Login user case 1
+POST http://localhost:8080/v1/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "Test123#"
+}
+
+### Get new token case 1 - uses refresh token
+POST http://localhost:8080/v1/token
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpYXQiOjE2OTEzNTI3Njh9.84rGtMGpfo070HARH8lKWoFNQUsBmJ9OwKGXRnQsSLY
+
+{
+  "email": "test@example.com"
+}
+
+### Logout case 1 - uses access token
+POST http://localhost:8080/v1/logout
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpYXQiOjE2OTEzNTMxMzEsImV4cCI6MTY5MTQzOTUzMX0.bRLug9hOwkuT2cEF19Awb3zjaOP236nzx01nSO-yXls
+
+{
+  "email": "test@example.com"
+}
