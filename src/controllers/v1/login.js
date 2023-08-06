@@ -2,7 +2,6 @@ import {Router} from "express";
 import models from "../../models";
 import asyncWrapper from "../../utils/asyncWrapper";
 import JWTUtils from "../../utils/jwt-utils";
-import RefreshToken from "../../models/refresh-token";
 
 const router = Router();
 const {User} = models;
@@ -32,7 +31,7 @@ router.post(
             refreshToken = JWTUtils.generateRefreshToken(payload);
 
             if (!savedRefreshToken) {
-                await user.createRefreshToken({token: refreshToken})
+                await user.createRefreshToken({token: refreshToken});
             } else {
                 savedRefreshToken.token = refreshToken;
                 await savedRefreshToken.save();
@@ -47,7 +46,7 @@ router.post(
                 message: 'Successfully logged in',
                 data: {
                     accessToken,
-                    refreshToken
+                    refreshToken,
                 },
             });
     })

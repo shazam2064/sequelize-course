@@ -3,12 +3,12 @@ import JWTUtils from "../../src/utils/jwt-utils";
 
 describe('jwt utils', () => {
     it('should return an access token', () => {
-        const payload = {email: 'test@example.com'}
+        const payload = {email: 'test@example.com'};
         expect(JWTUtils.generateAccessToken(payload)).toEqual(expect.any(String));
     });
 
     it('should return an access token', () => {
-        const payload = {email: 'test@example.com'}
+        const payload = {email: 'test@example.com'};
         expect(JWTUtils.generateRefreshToken(payload)).toEqual(expect.any(String));
     });
 

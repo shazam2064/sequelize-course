@@ -5,10 +5,15 @@ import dbConfig from './config/database'
 
 (async () => {
     try {
-        const db = new Database(environment.nodeEnv, dbConfig)
-        await db.connect()
+        const db = new Database(environment.nodeEnv, dbConfig);
+        await db.connect();
+
+        const App = require('./app').default;
+        const app = new App();
+        app.listen();
     } catch (err) {
-        console.error("Someone started when initializing the server:\n",
-            err.stack)
+        console.error(
+          "Someone started when initializing the server:\n",
+          err.stack);
     }
 })();

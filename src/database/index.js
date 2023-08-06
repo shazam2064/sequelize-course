@@ -10,9 +10,11 @@ export default class Database {
     }
 
     async connect() {
+        // Set up the namespace for transactions
         const namespace = cls.createNamespace('transactions-namespace');
         Sequelize.useCLS(namespace);
 
+        // Create the connection
         const { username, password, host, port, database, dialect } =
             this.dbConfig[this.environment];
         this.connection = new Sequelize({
@@ -25,6 +27,7 @@ export default class Database {
             logging: this.isTestEnvironment ? false : console.log,
         });
 
+        // Check if we connected successfully
         await this.connection.authenticate({ logging: false });
 
         if (!this.isTestEnvironment) {
@@ -33,8 +36,10 @@ export default class Database {
             );
         }
 
+        // Register the models
         registerModels(this.connection);
 
+        // Sync the models
         await this.sync();
     }
 

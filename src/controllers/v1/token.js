@@ -37,7 +37,7 @@ router.post(
                 data: {
                     accessToken: newAccessToken
                 }
-            })
+            });
     })
 );
 

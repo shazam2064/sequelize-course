@@ -12,10 +12,10 @@ export default class JWTUtils {
     }
 
     static verifyAccessToken(accessToken) {
-        return jwt.verify(accessToken, environment.jwtAccessTokenSecret)
+        return jwt.verify(accessToken, environment.jwtAccessTokenSecret);
     }
 
     static verifyRefreshToken(accessToken) {
-        return jwt.verify(accessToken, environment.jwtRefreshTokenSecret)
+        return jwt.verify(accessToken, environment.jwtRefreshTokenSecret);
     }
 }

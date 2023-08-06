@@ -10,16 +10,18 @@ export default function requiresAuth(tokenType = 'accessToken') {
                 throw Error;
              }
          } catch (err) {
-             return res.status(401).send({
+             return res.status(401)
+               .send({
                  success:false,
                  message: 'Bearer token malformed'
              });
          }
      } else {
-         return res.status(401).send({
+         return res.status(401)
+           .send({
              success:false,
              message: 'Authorization header not found'
-         })
+         });
      }
 
      try {
@@ -35,10 +37,11 @@ export default function requiresAuth(tokenType = 'accessToken') {
          req.body.jwt = jwt;
          next();
      } catch (err) {
-         return res.status(401).send({
+         return res.status(401)
+           .send({
              success:false,
              message: 'Invalid token'
-         })
+         });
      }
     };
 }

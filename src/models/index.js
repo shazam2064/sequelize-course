@@ -1,13 +1,13 @@
-import fs from 'fs'
-import path from 'path'
+import fs from 'fs';
+import path from 'path';
 
 let models = {};
 
 export function registerModels(sequelize) {
-    const thisFile = path.basename(__filename);
+    const thisFile = path.basename(__filename); // index.js
     const modelFiles = fs.readdirSync(__dirname);
     const filteredModelFiles = modelFiles.filter((file) => {
-        return file !== thisFile && file.slice(-3) === '.js'
+        return file !== thisFile && file.slice(-3) === '.js';
     });
 
     for (const file of filteredModelFiles) {
